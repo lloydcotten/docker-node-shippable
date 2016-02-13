@@ -1,0 +1,23 @@
+FROM monsantoco/min-jessie:latest
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    git-core \
+    python \
+    python-pip && \
+  rm -rf /usr/share/man /tmp/* /var/lib/apt/lists/*
+
+RUN mkdir -p /home/shippable/setup
+
+RUN pip install virtualenv && \
+  pip install awscli && \
+  pip install glob2 && \
+  pip install pika && \
+  echo "true" | tee /deps_updated.txt
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+
+RUN bash -c ". /root/.nvm/nvm.sh && nvm install v4"
+RUN bash -c ". /root/.nvm/nvm.sh && nvm alias default v4"
+
+CMD ["/bin/bash", "node"]
