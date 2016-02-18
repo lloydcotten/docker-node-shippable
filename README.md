@@ -21,7 +21,7 @@ node_js:
   - "4"
   - "4.2"
 
-build_image: lloydcotten/node_shippable:jessie-v4-1.0.1
+build_image: lloydcotten/node_shippable:jessie-v4-1.0.2
 
 before_install:
   - . ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
@@ -36,4 +36,5 @@ script: npm test
 
 ## Images
 
-* Node.js v4 (latest): `docker pull lloydcotten/node_shippable:jessie-v4-1.0.1`
+* Node.js v4 (latest): `docker pull lloydcotten/node_shippable:jessie-v4-1.0.2`
+* Node.js v0.10.32: `docker pull lloydcotten/node_shippable:jessie-v0.10.32-1.0.2`
