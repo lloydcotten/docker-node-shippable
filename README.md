@@ -18,10 +18,10 @@ These images are intended to be used directly with Shippable.  You can specify t
 language: node_js
 
 node_js:
-  - "4"
-  - "4.2"
+  - "0.10"
+  - "0.10.36"
 
-build_image: lloydcotten/node_shippable:jessie-v4-1.0.2
+build_image: lloydcotten/node_shippable:jessie-v0.10.32-1.0.2
 
 before_install:
   - . ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
