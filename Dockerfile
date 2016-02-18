@@ -18,7 +18,7 @@ RUN pip install virtualenv && \
 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
-RUN bash -c ". /root/.nvm/nvm.sh && nvm install v4"
-RUN bash -c ". /root/.nvm/nvm.sh && nvm alias default v4"
+RUN bash -c ". /root/.nvm/nvm.sh && nvm install v0.10.32"
+RUN bash -c ". /root/.nvm/nvm.sh && nvm alias default v0.10.32"
 
 CMD ["/bin/bash", "node"]
