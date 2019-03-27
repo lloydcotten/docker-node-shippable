@@ -1,4 +1,4 @@
-FROM monsantoco/min-jessie:latest
+FROM debian:stretch-20190326-slim
 
 RUN apt-get update && apt-get install -y \
     curl \
@@ -16,9 +16,9 @@ RUN pip install virtualenv && \
   pip install pika && \
   echo "true" | tee /deps_updated.txt
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-RUN bash -c ". /root/.nvm/nvm.sh && nvm install v4"
-RUN bash -c ". /root/.nvm/nvm.sh && nvm alias default v4"
+RUN bash -c ". /root/.nvm/nvm.sh && nvm install v10"
+RUN bash -c ". /root/.nvm/nvm.sh && nvm alias default v10"
 
 CMD ["/bin/bash", "node"]
